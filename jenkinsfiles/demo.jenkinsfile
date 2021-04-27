@@ -1,0 +1,20 @@
+#!groovy
+
+@Library('pipeline-library-demo')_
+
+//func from shareibray
+def tools = new org.foo.tools()
+
+pipeline{
+    agent any
+
+    stages{
+        stage('printMes'){
+            steps{
+                script{
+                    tools.PrintMes("测试打印信息","green")
+                }
+            }
+        }
+    }
+}
